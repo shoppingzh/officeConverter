@@ -33,7 +33,7 @@ public class OfficeConverter {
             app.setProperty("Visible", true);
             Dispatch docs = app.getProperty("Documents").toDispatch();
             Dispatch doc = Dispatch.call(docs, "Open", word, null, true).toDispatch();
-            Dispatch.call(doc, "SaveAs2", pdf, WdSaveFormat.PDF);
+            Dispatch.call(doc, "SaveAs", pdf, WdSaveFormat.PDF);
             Dispatch.call(doc, "Close", 0); // 0表示不保存修改
             return true;
         } catch (Exception e) {
